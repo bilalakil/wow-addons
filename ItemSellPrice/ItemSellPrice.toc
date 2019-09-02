@@ -1,0 +1,7 @@
+﻿## Interface: 11302
+## Title: ItemSellPrice
+## Author: Bilal Akil
+## Notes: Displays an item's sell price on its tooltip
+## Version: 0.0.1
+
+ItemSellPrice.lua
