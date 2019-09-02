@@ -1,0 +1,7 @@
+## Interface: 11302
+## Version: 0.0.1
+## Title: BagSlotsRemaining
+## Notes: Displays the number of remaining bag slots on the main bag icon
+## Author: Bilal Akil
+
+BagSlotsRemaining.lua

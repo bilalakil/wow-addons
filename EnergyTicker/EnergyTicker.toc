@@ -1,0 +1,8 @@
+## Interface: 11302
+## Author: Bilal Akil
+## Version: v0.0.1
+
+## Title: EnergyTicker
+## Notes: Rogue energy ticker. Takes one tick to synchronise
+
+EnergyTicker.lua
