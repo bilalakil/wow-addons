@@ -1,5 +1,9 @@
-local function UpdateItemTooltip(tooltip, isMouseOver)
-  if (not isMouseOver) and MerchantFrame:IsShown() then return end
+local function UpdateItemTooltip(tooltip, skipMouseCheck)
+  if
+    tooltip == GameTooltip and
+    GameTooltipMoneyFrame1 and
+    GameTooltipMoneyFrame1:IsShown()
+  then return end
 
 	local link = select(2, tooltip:GetItem())
 
@@ -9,23 +13,18 @@ local function UpdateItemTooltip(tooltip, isMouseOver)
 		if sellPrice and sellPrice > 0 then
 			local stackCount = 1
 
-			if isMouseOver then
-				local frame = GetMouseFocus()
-				local objectType = frame:GetObjectType()
+      local frame = GetMouseFocus()
+      local objectType = frame:GetObjectType()
 
-				if objectType == "Button" then
-					stackCount = frame.count or 1
-				end
-			end
+      if objectType == "Button" then
+        stackCount = frame.count or 1
+      end
 
 			SetTooltipMoney(tooltip, sellPrice * stackCount)
 		end
 	end
 end
 
-local function UpdateItemTooltipWithStackCheck(tooltip)
-  UpdateItemTooltip(tooltip, true)
-end
-
 GameTooltip:HookScript("OnTooltipSetItem", UpdateItemTooltip)
-ItemRefTooltip:HookScript("OnTooltipSetItem", UpdateItemTooltipWithStackCheck)
+ShoppingTooltip1:HookScript("OnTooltipSetItem", UpdateItemTooltip)
+ShoppingTooltip2:HookScript("OnTooltipSetItem", UpdateItemTooltip)
