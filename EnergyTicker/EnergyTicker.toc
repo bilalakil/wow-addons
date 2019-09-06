@@ -3,6 +3,7 @@
 ## Version: v0.0.1
 
 ## Title: EnergyTicker
-## Notes: Rogue energy ticker. Takes one tick to synchronise
+## Notes: Rogue energy ticker. Takes one tick to synchronise. Check /energyticker
+## SavedVariables: IsOnCharacterFrame
 
 EnergyTicker.lua

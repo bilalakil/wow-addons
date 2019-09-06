@@ -1,11 +1,10 @@
 local frame = CreateFrame("Frame")
 
-local FONT, FONT_SIZE = _G["SystemFont_Small"]:GetFont()
+local FONT, FONT_SIZE = _G["TextStatusBarText"]:GetFont()
 
 local text = MainMenuBarBackpackButton:CreateFontString(nil, "OVERLAY")
 text:SetFont(FONT, FONT_SIZE, "OUTLINE")
-text:SetPoint("BOTTOM", 0, 3)
-text:SetTextColor(1, 1, 1)
+text:SetPoint("BOTTOMRIGHT", -2, 2)
 
 local function UpdateSlotsRemaining()
   local totalSlotsRemaining = 0
@@ -16,7 +15,7 @@ local function UpdateSlotsRemaining()
     end
   end
 
-  text:SetFormattedText("(%d)", totalSlotsRemaining)
+  text:SetFormattedText("%d", totalSlotsRemaining)
 end
 UpdateSlotsRemaining()
 
